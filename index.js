@@ -38,7 +38,7 @@ const questions = [
     options: [
       "chaser",
       "keeper",
-      "seeker "
+      "seeker"
     ]
   },
   {
@@ -52,7 +52,7 @@ const questions = [
   },
   {
     question: "What is FLUFFY? ",
-    answer: "a three-headed dog",
+    answer: "a threeheaded dog",
     options: [
       "a threeheaded dog",
       "a snake",
