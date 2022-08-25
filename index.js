@@ -15,28 +15,67 @@ const highScore = [
 // question-answer
 const questions = [
   {
-    question: "What is my name? ",
-    answer: "Wasim Raja"
+    question: "In what house did the Sorting Hat almost put Harry? ",
+    answer: "Slytherin",
+    options: [
+      "Slytherin",
+      "Hufflepuff",
+      "Ravenclaw" ,
+    ]
   },
   {
-    question: "Where do I live currently? ",
-    answer: "Hyderabad"
+    question: "What subject does Professor McGonagall teach? ",
+    answer: "Transfiguration",
+    options: [
+      "Transfiguration",
+      "History of Magic",
+      "Defense Against the Dark Arts "
+    ]
   },
   {
-    question: "What did I study in college? ",
-    answer: "CSE"
+    question: "What position does Harry play on the Quidditch team? ",
+    answer: "seeker",
+    options: [
+      "chaser",
+      "keeper",
+      "seeker "
+    ]
   },
   {
-    question: "Do I like to play computer/mobile games? ",
-    answer: "No"
+    question: "Which of these is NOT an ingredient of Harry's wand? ",
+    answer: "unicorn hair",
+    options: [
+      "phoenix feather",
+      "holly",
+      "unicorn hair",
+    ]
   },
   {
-    question: "Am I a nerd? ",
-    answer: "Yes"
+    question: "What is FLUFFY? ",
+    answer: "a three-headed dog",
+    options: [
+      "a threeheaded dog",
+      "a snake",
+      "an owl"
+    ]
   },
   {
-    question: "Do I like to play Chess? ",
-    answer: "Yes"
+    question: "What dark wizard did Albus Dumbledore defeat in 1945? ",
+    answer: "Grindelwald",
+    options: [
+      "Nicolas Flamel",
+      "Grindelwald",
+      "Lord Voldemort"
+    ]
+  },
+  {
+    question: "Which one of these is not a candy? ",
+    answer: "Knuts",
+    options: [
+      "Bertie Botts Every Flavor Beans",
+      "Chocolate Frogs",
+      "Knuts"
+    ]
   },
 ]
 
@@ -55,7 +94,7 @@ function quiz() {
 function welcome(userName) {
   userName = readlineSync.question("What is your Name? ")
   console.log(`Hey ${userName}, welcome to this Quiz`)
-  console.log("Lets see how much you know me.\n")
+  console.log("Lets see how much you know about Harry Potter's world.\n")
   return userName;
 }
 
@@ -76,8 +115,8 @@ function play(currentScore, questions) {
 
 // game
 function checkAnswer(currentQuestion) {
-  const answer = readlineSync.question(currentQuestion.question);
-  const isRight = answer === currentQuestion.answer
+  const index = readlineSync.keyInSelect(currentQuestion.options, currentQuestion.question);
+  const isRight = currentQuestion.options[index] === currentQuestion.answer
   return isRight
 }
 
